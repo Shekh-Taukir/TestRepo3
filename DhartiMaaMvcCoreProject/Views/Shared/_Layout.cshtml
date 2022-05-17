@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DhartiMaa</title>
+   @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  @*  <link rel="stylesheet" href="~/DhartiMaaMvcCoreProject.styles.css" asp-append-version="true" />*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@200;400;600&display=swap" rel="stylesheet" type="text/css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/custom.css">
+    <style>
+
+        /** ADD YOUR AWESOME CODES HERE **/
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .card {
+            margin: 0 0.5em;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+            border-radius: 0;
+        }
+
+        .carousel-inner {
+            padding: 1em;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 5vh;
+            height: 5vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .bg-img {
+            /* The image used */
+            background-image: url("@Url.Content("~/Content/images/services/service-lipan-3.jpeg")");
+            background-repeat: repeat;
+           
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light  bootsnav" >
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" style="color:rgb(255 255 255 / 100%);" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Content/images/logo/dharti-maa-logo.jpeg")" height="75px" width="250px" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"><a class="nav-link" href="@Url.Action("Index","Home")">Home</a></li>
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")"><a class="nav-link" href="@Url.Action("About","Home")">About Us</a></li>
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "active" : "")"><a class="nav-link" href="@Url.Action("Services","Home")">Services</a></li>
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Blogs" ? "active" : "")"><a class="nav-link" href="@Url.Action("Blogs","Home")">Blogs</a></li>
+                        @*<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "active" : "")"><a class="nav-link" href="@Url.Action("Gallery","Home")">Gallery</a></li>*@
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")"><a class="nav-link" href="@Url.Action("Contact","Home")">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+
+
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+
+    <div class="pt-3">
+        @RenderBody()
+
+    </div>
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About Dharti Maa</h4>
+                            <p>
+                                આપણને સૌને હૃદયથી અનેરો આનંદ પમાડે તેવી જગ્યાએ કુદરત સિવાય કોઈ નથી. નદી, પર્વતો, જંગલો એ આપણા 
+                                સૌની આંખો ને ખુશી પમાડે છે. એવી જ રીતે જ્યારે માટી સાથેના સંબંધોમાં જઈએ છીએ ત્યારે પણ આપણા જીવનની
+                                જીવંતતા આપણે અનુભવીએ છીએ. શહેરના સતત ધમધમતા જીવનશૈલીથી ક્યારેક પણ ગામડાઓ અને કુદરત વચ્ચે જવાનું
+                                થાય ત્યારે આપણું મન પ્રસન્ન થઇ જાય જ છે. અર્થ આનો આટલો જ સાદો છે કે આપણું મન પણ ત્યાં જ શાંતિ પામે છે.
+                                પંચમહાભૂત એ આપણું જીવન છે. પાણી, માટી, હવા, અગ્નિ અને આકાશ ને  શુદ્ધ રાખવાએ આપણી જવાબદારી છે. 
+                                આપણી આવતી પેઢી ને તંદુરસ્ત જીવન તો જ આપી શકીશું જો, આજે આપણે કુદરતને સમજીને બચાવવા લાગી જઈશું.
+                                માટીના મકાનો એમાં થતું માટી - ગોબરનું લીંપણ,  છાપરામાં નળિયાં અથવા ઘાસ આપણને ઠંડક આપે જ છે.
+                                કેમિકલ એટલે કે ઝેર.
+                            </p>
+                            <p>
+                                ઝેર વગરના ખાદ્ય પદાર્થો, ઝેર વગરના સૌંદર્ય પ્રસાધનો એ પણ આપણી તંદુરસ્તીને જાળવવા અનોખો ભાગ ભજવે છે. 
+                                માટે જ આપણી જીવનશૈલીને કુદરત આધારિત બનાવવા આપણે સૌ એ  સતત મથવુ  જ રહ્યું. 
+                                તો જ આવતા સમયમાં આપણે શુદ્ધ વાતાવરણ આપણી પેઢીને આપતા જઈશું.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>સરનામું : ધરતી માઁ,<br> મુકામ પોસ્ટ : વેળાવદર, તાલુકો : વઢવાણ,<br />જિલ્લો : સુરેન્દ્રનગર  <br>પીન કોડ : 363040</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>ફોન : <a href="tel:+91 94285 21201">+91 94285 21201</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>ઇમેઇલ : <a href="mailto:dharatimaa.info@gmail.com">dharatimaa.info@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">
+            All Rights Reserved. &copy; 2022 <a href="#">Dharti Maa</a>
+            <!--Design By :
+            <a href="https://html.design/">html design</a>-->
+        </p>
+    </div>
+    <!-- End copyright  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"> &uarr;</a>
+   @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+   @* <script src="~/js/site.js" asp-append-version="true"></script>*@
+    
+    <!-- ALL JS FILES -->
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/js/jquery.superslides.min.js"></script>
+    <script src="~/js/bootstrap-select.js"></script>
+    <script src="~/js/inewsticker.js"></script>
+    <script src="~/js/bootsnav.js."></script>
+    <script src="~/js/images-loded.min.js"></script>
+    <script src="~/js/isotope.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/baguetteBox.min.js"></script>
+    <script src="~/js/form-validator.min.js"></script>
+    <script src="~/js/contact-form-script.js"></script>
+    <script src="~/js/custom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
