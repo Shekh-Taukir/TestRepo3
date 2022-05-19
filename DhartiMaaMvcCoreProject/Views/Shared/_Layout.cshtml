@@ -79,7 +79,7 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"><a class="nav-link" href="@Url.Action("Index","Home")">Home</a></li>
                         <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")"><a class="nav-link" href="@Url.Action("About","Home")">About Us</a></li>
-                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "active" : "")"><a class="nav-link" href="@Url.Action("Services","Home")">Services</a></li>
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "active" : "")"><a class="nav-link" href="@Url.Action("Service","Service")">Services</a></li>
                         <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Blogs" ? "active" : "")"><a class="nav-link" href="@Url.Action("Blogs","Home")">Blogs</a></li>
                         @*<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "active" : "")"><a class="nav-link" href="@Url.Action("Gallery","Home")">Gallery</a></li>*@
                         <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")"><a class="nav-link" href="@Url.Action("Contact","Home")">Contact Us</a></li>
