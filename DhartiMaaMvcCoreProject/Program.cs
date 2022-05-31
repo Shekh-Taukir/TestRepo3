@@ -1,4 +1,8 @@
+using DhartiMaaMvcCoreProject.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -83,6 +83,7 @@
                         <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Blogs" ? "active" : "")"><a class="nav-link" href="@Url.Action("Blogs","Blog")">Blogs</a></li>
                         @*<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "active" : "")"><a class="nav-link" href="@Url.Action("Gallery","Home")">Gallery</a></li>*@
                         <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")"><a class="nav-link" href="@Url.Action("ContactUs","ContactUs")">Contact Us</a></li>
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "active" : "")"><a class="nav-link" href="@Url.Action("addProduct","Product")">AddProduct</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

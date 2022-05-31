@@ -19,7 +19,6 @@
     <Content Remove="wwwroot\css\jquery-ui.css" />
     <Content Remove="wwwroot\css\owl.carousel.min.css" />
     <Content Remove="wwwroot\css\responsive.css" />
-    <Content Remove="wwwroot\css\style.css" />
     <Content Remove="wwwroot\css\superslides.css" />
   </ItemGroup>
 
@@ -35,20 +34,6 @@
     <None Include="wwwroot\Content\bootstrap.css.map" />
     <None Include="wwwroot\Content\bootstrap.min.css" />
     <None Include="wwwroot\Content\bootstrap.min.css.map" />
-    <None Include="wwwroot\Content\css\all.css" />
-    <None Include="wwwroot\Content\css\animate.css" />
-    <None Include="wwwroot\Content\css\baguetteBox.min.css" />
-    <None Include="wwwroot\Content\css\bootsnav.css" />
-    <None Include="wwwroot\Content\css\bootstrap-select.css" />
-    <None Include="wwwroot\Content\css\bootstrap.min.css" />
-    <None Include="wwwroot\Content\css\carousel-ticker.css" />
-    <None Include="wwwroot\Content\css\code_animate.css" />
-    <None Include="wwwroot\Content\css\custom.css" />
-    <None Include="wwwroot\Content\css\jquery-ui.css" />
-    <None Include="wwwroot\Content\css\owl.carousel.min.css" />
-    <None Include="wwwroot\Content\css\responsive.css" />
-    <None Include="wwwroot\Content\css\style.css" />
-    <None Include="wwwroot\Content\css\superslides.css" />
     <None Include="wwwroot\Content\images\about-img.jpg" />
     <None Include="wwwroot\Content\images\add-img-01.jpg" />
     <None Include="wwwroot\Content\images\add-img-02.jpg" />
@@ -210,8 +195,16 @@
     <None Include="wwwroot\css\jquery-ui.css" />
     <None Include="wwwroot\css\owl.carousel.min.css" />
     <None Include="wwwroot\css\responsive.css" />
-    <None Include="wwwroot\css\style.css" />
     <None Include="wwwroot\css\superslides.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
