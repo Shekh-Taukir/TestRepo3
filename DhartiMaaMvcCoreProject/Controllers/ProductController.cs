@@ -1,32 +1,41 @@
 ﻿using DhartiMaaMvcCoreProject.Helper;
 using DhartiMaaMvcCoreProject.Models;
+using DhartiMaaMvcCoreProject.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DhartiMaaMvcCoreProject.Controllers
 {
     public class ProductController : Controller
     {
-        DhartiMaaAPI _api = new DhartiMaaAPI();
+        private readonly IProductRepository _productRepository;
+
+        public ProductController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public ActionResult addProduct()
+        public ActionResult AddProduct()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddProduct(Product product)
+        public async Task<IActionResult> AddProduct(Product product)
         {
-            HttpClient client = _api.Initial();
-
-            var postTask=client.PostAsJsonAsync<Product>("api/Product/v1/product/add-product",product);
-            postTask.Wait();
-
-            var result = postTask.Result;
-            if (result.IsSuccessStatusCode) { return RedirectToAction("Index"); }
+            if (product == null)
+            {
+                return View();
+            }
+            var response = await _productRepository.AddProduct(product);
+            if (response)
+            {
+                return RedirectToAction("Home/Index");
+            }
             return View();
         }
     }
