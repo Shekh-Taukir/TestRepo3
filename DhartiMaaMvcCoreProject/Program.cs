@@ -2,6 +2,7 @@ using DhartiMaaMvcCoreProject.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Add Dependancy Here.
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 // Add services to the container.
