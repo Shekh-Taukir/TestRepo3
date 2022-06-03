@@ -1,12 +1,27 @@
-on: push
-name: Deploy website on push
+name: Check for Error and then deploy it
+on: 
+  push:
+    branches:
+    - main
+    - dev1
+
 jobs:
-  web-deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
+  super-lint:
+    name : Lint code base
+    runs-on : ubuntu-latest
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
+    - name : Checkout code
+      uses : actions/checkout@v2
+
+    - name : Run Super-Linter
+      uses : github/super-linter@v3.17.0
+      env :
+        # DEFAULT_BRANCH: 
+        # - dev1
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    # - name: Get latest code
+    #   uses: actions/checkout@v2
     
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
