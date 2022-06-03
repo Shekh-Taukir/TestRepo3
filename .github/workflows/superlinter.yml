@@ -3,8 +3,7 @@ name: Check for Error and then deploy it
 on: 
   push:
     branches:
-    - main
-    - dev1
+    - master
 
 jobs:
   super-lint:
